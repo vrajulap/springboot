@@ -1,26 +1,22 @@
-package com.nrg.userms.resource;
+package com.edureka.userms.resource;
+
+import com.edureka.userms.model.User;
+import com.edureka.userms.service.UserService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.nrg.userms.model.User;
-import com.nrg.userms.service.UserService;
-
 @RestController
+//@RequestMapping("/api/v1")
 public class UserResource {
-    @Autowired
-	private UserService userService;
+    private final UserService userService;
 
-   
+    public UserResource(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/users")
     public ResponseEntity getAllUsers() {
@@ -48,4 +44,8 @@ public class UserResource {
         return ResponseEntity.created(new URI(userCreated.getId().toString())).build();
     }
 
+    @GetMapping("/allOrders")
+    public Object getAllOrders() {
+        return userService.getAllOrders();
+    }
 }

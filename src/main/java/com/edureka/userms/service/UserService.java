@@ -1,6 +1,6 @@
-package com.nrg.userms.service;
+package com.edureka.userms.service;
 
-import com.nrg.userms.model.User;
+import com.edureka.userms.model.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,5 +12,6 @@ public interface UserService {
     void partiallyUpdateUser(User user);
     void updateUser(User user);
     void deleteUser(Long userId);
+    Object getAllOrders();
 
 }

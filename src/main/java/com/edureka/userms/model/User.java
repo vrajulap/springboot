@@ -1,4 +1,4 @@
-package com.nrg.userms.model;
+package com.edureka.userms.model;
 
 import javax.persistence.*;
 

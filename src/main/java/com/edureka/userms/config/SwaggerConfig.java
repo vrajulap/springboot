@@ -1,4 +1,4 @@
-package com.nrg.userms.config;
+package com.edureka.userms.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
